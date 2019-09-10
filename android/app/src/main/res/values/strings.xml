@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Desafio Android</string>
+
+    <!-- Repos Activity -->
+    <string name="repos_title">Github JavaPop</string>
+    <string name="repos_error_401">Not authorized</string>
+    <string name="repos_error_400_generic">Error</string>
+    <string name="repos_error_500_generic">Error</string>
+
+    <!-- Pulls Activity -->
+    <string name="created_at">Created At</string>
+
+</resources>
