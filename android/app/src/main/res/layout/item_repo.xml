@@ -19,7 +19,7 @@
 
     <TextView
             android:id="@+id/textDescription"
-            android:layout_width="wrap_content"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
@@ -34,17 +34,16 @@
             android:layout_height="30dp"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
-            android:src="@mipmap/ic_launcher_round"
             android:textColor="#000"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textDescription" />
+            app:layout_constraintTop_toBottomOf="@+id/textDescription"
+            app:srcCompat="@android:drawable/ic_input_add" />
 
     <TextView
             android:id="@+id/textForksCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:textColor="@color/info"
             app:layout_constraintLeft_toRightOf="@+id/imageForks"
             app:layout_constraintTop_toBottomOf="@+id/textDescription"
@@ -58,18 +57,16 @@
             android:layout_height="30dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
-            android:src="@mipmap/ic_launcher_round"
             android:textColor="#000"
             app:layout_constraintLeft_toRightOf="@+id/textForksCount"
             app:layout_constraintTop_toBottomOf="@+id/textDescription"
-            />
+            app:srcCompat="@android:drawable/btn_star_big_on" />
 
     <TextView
             android:id="@+id/textStarsCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:textColor="@color/info"
             app:layout_constraintLeft_toRightOf="@+id/imageStars"
             app:layout_constraintTop_toBottomOf="@+id/textDescription"

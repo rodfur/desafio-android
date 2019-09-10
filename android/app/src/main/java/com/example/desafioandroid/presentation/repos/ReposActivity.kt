@@ -3,16 +3,20 @@ package com.example.desafioandroid.presentation.repos
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import com.example.desafioandroid.R
 import com.example.desafioandroid.presentation.base.BaseActivity
+import com.example.desafioandroid.presentation.base.InfiniteScrollListener
 import com.example.desafioandroid.presentation.pulls.PullsActivity
 import kotlinx.android.synthetic.main.activity_repos.*
 import kotlinx.android.synthetic.main.include_toolbar.*
 
 class ReposActivity : BaseActivity() {
+
+    private var page = 0;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +30,10 @@ class ReposActivity : BaseActivity() {
         viewModel.reposLiveData.observe(this, Observer {
             it?.let { repos ->
                 with(recyclerRepos) {
-                    layoutManager = LinearLayoutManager(this@ReposActivity, RecyclerView.VERTICAL, false)
+
+                    val linearLayoutManager = LinearLayoutManager(this@ReposActivity, RecyclerView.VERTICAL, false)
+
+                    layoutManager = linearLayoutManager
                     setHasFixedSize(true)
                     adapter =
                         ReposAdapter(repos) { repo ->
@@ -38,6 +45,8 @@ class ReposActivity : BaseActivity() {
                                 )
                             this@ReposActivity.startActivity(intent)
                         }
+
+                    addOnScrollListener(InfiniteScrollListener({ viewModel.getRepos(page++) }, linearLayoutManager))
                 }
             }
         })
@@ -52,6 +61,6 @@ class ReposActivity : BaseActivity() {
             }
         })
 
-        viewModel.getRepos()
+        viewModel.getRepos(page++)
     }
 }

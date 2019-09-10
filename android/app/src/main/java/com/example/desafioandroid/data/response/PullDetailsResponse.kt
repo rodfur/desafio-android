@@ -9,7 +9,7 @@ import java.sql.Date
 @JsonClass(generateAdapter = true)
 data class PullDetailsResponse(
 
-        @Json(name = "url")
+        @Json(name = "html_url")
         val url: String,
         @Json(name = "id")
         val id: Int,
