@@ -16,7 +16,7 @@ data class PullDetailsResponse(
         @Json(name = "title")
         val title: String,
         @Json(name = "body")
-        val body: String,
+        val body: String?,
         @Json(name = "created_at")
         val created_at: String,
         @Json(name = "user")

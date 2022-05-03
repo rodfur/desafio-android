@@ -8,6 +8,6 @@ data class Pull(
     val id: Int,
     val title: String,
     val user: Owner,
-    val body: String,
+    val body: String?,
     val created_at: String
 )

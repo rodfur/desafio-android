@@ -43,9 +43,12 @@ class PullsAdapter(
 
         fun bindView(pull: Pull) {
 
-
             title.text = pull.title
-            body.text = pull.body.take(30)
+
+            pull.body?.let {
+                body.text = it.take(30)
+            }
+
             created_at.text = pull.created_at
             login.text = pull.user.login
 
